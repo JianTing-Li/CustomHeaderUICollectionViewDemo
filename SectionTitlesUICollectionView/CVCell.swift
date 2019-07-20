@@ -10,4 +10,6 @@ import UIKit
 
 class CVCell: UICollectionViewCell {
     
+    @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var textlabel: UILabel!
 }

@@ -11,6 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionview: UICollectionView!
+    private var category = ["dumplings", "Soup", "cake"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,8 @@ extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let sectionHeaderView = collectionview.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeaderView", for: indexPath) as! SectionHeaderView
-        let category = indexPath.section.description
-        sectionHeaderView.titleLabel.text = category
+        let categorySelected = category[indexPath.section]
+        sectionHeaderView.titleLabel.text = categorySelected
         return sectionHeaderView
     }
 }
